@@ -1,5 +1,7 @@
 package com.devsuperior.bds02.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +20,8 @@ public class City {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
-	
+
+	@JsonIgnore
 	@OneToMany(mappedBy = "city")
 	private List<Event> events = new ArrayList<>();
 	
